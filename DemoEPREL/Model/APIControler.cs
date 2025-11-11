@@ -18,7 +18,7 @@ namespace DemoEPREL.Model
         public static string Television { get; } = GeneralPath + "televisions";
 
 
-        public static async void GenerateCategoryJSONFile(string categoryPath, string filename, string apiKey)
+        public static async Task GenerateCategoryJSONFile(string categoryPath, string filename, string apiKey)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -42,15 +42,15 @@ namespace DemoEPREL.Model
             }
         }
 
-        public static void GenerateAllCategoryFiles(string apiKey)
+        public static async Task GenerateAllCategoryFiles(string apiKey)
         {
-            GenerateCategoryJSONFile(HouseholdWashingMachines, "HouseholdWashingMachines", apiKey);
-            GenerateCategoryJSONFile(WashingMachines2019, "WashingMachines2019", apiKey);
-            GenerateCategoryJSONFile(HouseholdRefrigeratingApplieance, "HouseholdRefrigeratingApplieance", apiKey);
-            GenerateCategoryJSONFile(AirConditioners, "AirConditioners", apiKey);
-            GenerateCategoryJSONFile(Ovens, "Ovens", apiKey);
-            GenerateCategoryJSONFile(Dishwashers, "Dishwashers", apiKey);
-            GenerateCategoryJSONFile(Television, "Television", apiKey);
+            await GenerateCategoryJSONFile(HouseholdWashingMachines, "HouseholdWashingMachines", apiKey);
+            await GenerateCategoryJSONFile(WashingMachines2019, "WashingMachines2019", apiKey);
+            await GenerateCategoryJSONFile(HouseholdRefrigeratingApplieance, "HouseholdRefrigeratingApplieance", apiKey);
+            await GenerateCategoryJSONFile(AirConditioners, "AirConditioners", apiKey);
+            await GenerateCategoryJSONFile(Ovens, "Ovens", apiKey);
+            await GenerateCategoryJSONFile(Dishwashers, "Dishwashers", apiKey);
+            await GenerateCategoryJSONFile(Television, "Television", apiKey);
         }
     }
 }
