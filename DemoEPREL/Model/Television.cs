@@ -45,7 +45,7 @@ namespace DemoEPREL.Model
             DiagonalInch = Convert.ToDouble(jsonData.SelectToken("diagonalInch"));
             HorizontalResolution = Convert.ToDouble(jsonData.SelectToken("horizontalResolution"));
             EnergyClass = jsonData.SelectToken("energyClass").ToString();
-            EnergyAnual = Convert.ToDouble(jsonData.SelectToken("energyAnual"));
+            EnergyAnual = Convert.ToDouble(jsonData.SelectToken("energyAnnual"));
             EnergyConsumption = Convert.ToDouble(jsonData.SelectToken("energyConsumption"));
             EnergyConsumptionStandbyMode = Convert.ToDouble(jsonData.SelectToken("energyConsumptionStandbyMode"));
 

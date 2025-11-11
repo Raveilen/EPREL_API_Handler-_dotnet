@@ -33,7 +33,7 @@ namespace DemoEPREL
 
                     string jsonString = await response.Content.ReadAsStringAsync();
 
-                    await File.WriteAllTextAsync($"jsons/{filename}.json", jsonString);
+                    await File.WriteAllTextAsync($"jsons/{filename}", jsonString);
                     Console.WriteLine("Fetched JSON:");
                     Console.WriteLine(jsonString);
                 }
@@ -46,14 +46,14 @@ namespace DemoEPREL
 
         public static async Task GenerateAllCategoryFiles(string apiKey)
         {
-            await GenerateCategoryJSONFile(HouseholdWashingMachines, "HouseholdWashingMachines", apiKey);
-            await GenerateCategoryJSONFile(WashingMachines2019, "WashingMachines2019", apiKey);
-            await GenerateCategoryJSONFile(HouseholdRefrigeratingApplieance, "HouseholdRefrigeratingApplieance", apiKey);
-            await GenerateCategoryJSONFile(AirConditioners, "AirConditioners", apiKey);
-            await GenerateCategoryJSONFile(Ovens, "Ovens", apiKey);
-            await GenerateCategoryJSONFile(Dishwashers, "Dishwashers", apiKey);
-            await GenerateCategoryJSONFile(Television, "Television", apiKey);
-            await GenerateCategoryJSONFile(ElectronicDisplays, "ElectrounicDisplays", apiKey);
+            await GenerateCategoryJSONFile(HouseholdWashingMachines, JSONFileNames.HouseholdWashingMachines, apiKey);
+            await GenerateCategoryJSONFile(WashingMachines2019, JSONFileNames.WashingMachines2019, apiKey);
+            await GenerateCategoryJSONFile(HouseholdRefrigeratingApplieance, JSONFileNames.HouseholdRefrigeratingApplieance, apiKey);
+            await GenerateCategoryJSONFile(AirConditioners, JSONFileNames.AirConditioners, apiKey);
+            await GenerateCategoryJSONFile(Ovens, JSONFileNames.Ovens, apiKey);
+            await GenerateCategoryJSONFile(Dishwashers, JSONFileNames.Dishwashers, apiKey);
+            await GenerateCategoryJSONFile(Television, JSONFileNames.Televisions, apiKey);
+            await GenerateCategoryJSONFile(ElectronicDisplays, JSONFileNames.ElectrounicDisplays, apiKey);
         }
     }
 }

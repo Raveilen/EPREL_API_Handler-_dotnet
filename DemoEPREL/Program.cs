@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using DemoEPREL;
+using DemoEPREL.Model;
 using DotNetEnv;
 
 namespace EprelApiExample
@@ -14,6 +15,9 @@ namespace EprelApiExample
             DotNetEnv.Env.Load();
             string apiKey = Environment.GetEnvironmentVariable("EPREL_API_KEY");
             await APIControler.GenerateAllCategoryFiles(apiKey);
+
+            EntityMapper.MapAllTelevisions();
+            var test = Television.All;
         }
     }
 }
