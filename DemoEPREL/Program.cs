@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using DemoEPREL.Model;
+using DemoEPREL;
 using DotNetEnv;
 
 namespace EprelApiExample

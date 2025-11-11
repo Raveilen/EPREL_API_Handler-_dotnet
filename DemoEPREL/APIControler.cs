@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoEPREL.Model
+namespace DemoEPREL
 {
     public static class APIControler
     {
@@ -16,6 +17,7 @@ namespace DemoEPREL.Model
         public static string Ovens { get; } = GeneralPath + "ovens";
         public static string Dishwashers { get; } = GeneralPath + "dishwashers";
         public static string Television { get; } = GeneralPath + "televisions";
+        public static string ElectronicDisplays { get; } = GeneralPath + "electronicdisplays";
 
 
         public static async Task GenerateCategoryJSONFile(string categoryPath, string filename, string apiKey)
@@ -51,6 +53,7 @@ namespace DemoEPREL.Model
             await GenerateCategoryJSONFile(Ovens, "Ovens", apiKey);
             await GenerateCategoryJSONFile(Dishwashers, "Dishwashers", apiKey);
             await GenerateCategoryJSONFile(Television, "Television", apiKey);
+            await GenerateCategoryJSONFile(ElectronicDisplays, "ElectrounicDisplays", apiKey);
         }
     }
 }
