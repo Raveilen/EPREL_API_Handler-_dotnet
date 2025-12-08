@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DemoEPREL.Model;
 using Newtonsoft.Json.Linq;
+using Sprache;
 
 namespace DemoEPREL
 {
@@ -20,6 +21,28 @@ namespace DemoEPREL
                 new Television(jt);
             }
 
+        }
+
+        public static void MapAllAirConditioners()
+        {
+            var jsonData = JObject.Parse(File.ReadAllText($"jsons/{JSONFileNames.AirConditioners}"));
+            var hits = jsonData.SelectToken("hits");
+
+            foreach(JToken jt in hits)
+            {
+                new AirConditioner(jt);
+            }
+        }
+
+        public static void MapAllRefrigerators()
+        {
+            var jsonData = JObject.Parse(File.ReadAllText($"jsons/{JSONFileNames.HouseholdRefrigeratingApplieance}"));
+            var hits = jsonData.SelectToken("hits");
+
+            foreach(JToken jt in hits)
+            {
+                new Refrigerator(jt);
+            }
         }
     }
 }

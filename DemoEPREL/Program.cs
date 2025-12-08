@@ -17,7 +17,10 @@ namespace EprelApiExample
             await APIControler.GenerateAllCategoryFiles(apiKey);
 
             EntityMapper.MapAllTelevisions();
-            var test = Television.All;
+            EntityMapper.MapAllAirConditioners();
+            EntityMapper.MapAllRefrigerators();
+            var test = Refrigerator.All;
+            var aaa = 5;
         }
     }
 }
