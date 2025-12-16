@@ -1,10 +1,5 @@
-﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using DemoEPREL;
+﻿using DemoEPREL;
 using DemoEPREL.Model;
-using DotNetEnv;
 
 namespace EprelApiExample
 {
@@ -16,10 +11,8 @@ namespace EprelApiExample
             string apiKey = Environment.GetEnvironmentVariable("EPREL_API_KEY");
             await APIControler.GenerateAllCategoryFiles(apiKey);
 
-            EntityMapper.MapAllTelevisions();
-            EntityMapper.MapAllAirConditioners();
-            EntityMapper.MapAllRefrigerators();
-            var test = Refrigerator.All;
+            EntityMapper.MapAllCategories();
+            var test = WashingMachine.All;
             var aaa = 5;
         }
     }
