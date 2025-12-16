@@ -44,5 +44,16 @@ namespace DemoEPREL
                 new Refrigerator(jt);
             }
         }
+
+        public static void MapAllOvens()
+        {
+            var jsonData = JObject.Parse(File.ReadAllText($"jsons/{JSONFileNames.Ovens}"));
+            var hits = jsonData.SelectToken("hits");
+
+            foreach(JToken jt in hits)
+            {
+                new Oven(jt);
+            }
+        }
     }
 }
